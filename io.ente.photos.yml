@@ -14,7 +14,57 @@ finish-args:
   - --device=dri
   - --share=network
 
+cleanup:
+  - /include
+
 modules:
+  - name: libde265
+    cleanup:
+      - /bin
+    config-opts:
+      - --disable-dec265
+      - --disable-sherlock265
+    sources:
+      - type: archive
+        url: https://github.com/strukturag/libde265/releases/download/v1.0.15/libde265-1.0.15.tar.gz
+        sha256: 00251986c29d34d3af7117ed05874950c875dd9292d016be29d3b3762666511d
+        x-checker-data:
+          type: anitya
+          project-id: 11239
+          url-template: https://github.com/strukturag/libde265/releases/download/v$version/libde265-$version.tar.gz
+
+  - name: libheif
+    buildsystem: cmake-ninja
+    cleanup:
+      - /lib/cmake
+    config-opts:
+      - --preset=release-noplugins
+      - -DWITH_EXAMPLES=OFF
+    sources:
+      - type: archive
+        url: https://github.com/strukturag/libheif/releases/download/v1.19.5/libheif-1.19.5.tar.gz
+        sha256: d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
+        x-checker-data:
+          type: anitya
+          project-id: 64439
+          url-template: https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz
+
+  - name: imagemagick
+    config-opts:
+      - --disable-static
+      - --disable-docs
+      - --with-modules
+      - --without-magick-plus-plus
+      - --without-x
+    sources:
+      - type: archive
+        url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.gz
+        sha256: 81c03fe273d8dd33c36dc5b967ae279f87e3be5bb5070e6fbeb893ddd40b0340
+        x-checker-data:
+          type: anitya
+          project-id: 1372
+          url-template: https://imagemagick.org/archive/releases/ImageMagick-$version.tar.gz
+
   - name: ente
     buildsystem: simple
     build-commands:
