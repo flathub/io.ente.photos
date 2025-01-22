@@ -20,7 +20,6 @@ modules:
     build-commands:
       - ar x ente.deb
       - tar xf data.tar.xz
-      - rm opt/ente/resources/image-magick
       - mv opt/ente /app
       - mv usr/share/applications usr/share/icons /app/share
       - desktop-file-edit --set-key Exec --set-value "run.sh %U" /app/share/applications/ente.desktop
