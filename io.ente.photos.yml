@@ -30,12 +30,12 @@ modules:
       - type: file
         only-arches: [x86_64]
         url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.9-beta/ente-1.7.9-beta-amd64.deb
-        sha256: f40e428663834a6013b8eb5d965a90463091e5018e4bebe71a507b9f6f45fabf
+        sha256: 1bac6df4673ddda23682ac5cde318ed38b00d4f034a8859662bb32314ba2f9ef
         dest-filename: ente.deb
       - type: file
         only-arches: [aarch64]
         url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.9-beta/ente-1.7.9-beta-arm64.deb
-        sha256: 2c23d02d1daf5e74181fa5091c4c67fc1b93db88da1cd756007b51369851921b
+        sha256: 8f61ed420ff22ca836fa38fd195a056fb5cda8dd553db3e9b63a51f73da0b12b
         dest-filename: ente.deb
       - type: script
         dest-filename: run.sh
