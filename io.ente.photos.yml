@@ -53,26 +53,26 @@ modules:
     sources:
       - type: file
         only-arches: [x86_64]
-        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.9/ente-1.7.9-amd64.deb
-        sha256: ae8b4d0df41cfa2eca5fa06306080746a597ee6539330b4d89d85521a31489ec
+        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.10/ente-1.7.10-amd64.deb
+        sha256: aeba730c80ea9cb9285ab03b46857ad8976bb67e6ff01cdc38c87768299922fc
         dest-filename: ente.deb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ente-io/photos-desktop/releases/latest
-          version-query: '.tag_name | sub("v"; "")'
-          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v" +
-            $version + "/ente-" + $version + "-amd64.deb"'
+          version-query: .tag_name | sub("v"; "")
+          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v"
+            + $version + "/ente-" + $version + "-amd64.deb"'
       - type: file
         only-arches: [aarch64]
-        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.9/ente-1.7.9-arm64.deb
-        sha256: 1ecdc08c426caa861f6c3cea746b0c30d0de5b2057a2058702413b4a4440723e
+        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.10/ente-1.7.10-arm64.deb
+        sha256: 9f9e6238fb7512a7034813541fe3e1b3fdb791257479cc9e66ff0edeeace3d96
         dest-filename: ente.deb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ente-io/photos-desktop/releases/latest
-          version-query: '.tag_name | sub("v"; "")'
-          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v" +
-            $version + "/ente-" + $version + "-arm64.deb"'
+          version-query: .tag_name | sub("v"; "")
+          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v"
+            + $version + "/ente-" + $version + "-arm64.deb"'
       - type: script
         dest-filename: run.sh
         commands:
