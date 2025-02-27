@@ -60,7 +60,8 @@ modules:
           type: json
           url: https://api.github.com/repos/ente-io/photos-desktop/releases/latest
           version-query: '.tag_name | sub("v"; "")'
-          url-query: https://github.com/ente-io/photos-desktop/releases/download/v$version/ente-$version-amd64.deb
+          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v" +
+            $version + "/ente-" + $version + "-amd64.deb"'
       - type: file
         only-arches: [aarch64]
         url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.9/ente-1.7.9-arm64.deb
@@ -70,7 +71,8 @@ modules:
           type: json
           url: https://api.github.com/repos/ente-io/photos-desktop/releases/latest
           version-query: '.tag_name | sub("v"; "")'
-          url-query: https://github.com/ente-io/photos-desktop/releases/download/v$version/ente-$version-arm64.deb
+          url-query: '"https://github.com/ente-io/photos-desktop/releases/download/v" +
+            $version + "/ente-" + $version + "-arm64.deb"'
       - type: script
         dest-filename: run.sh
         commands:
