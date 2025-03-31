@@ -46,6 +46,7 @@ modules:
       - tar xf data.tar.xz
       - mv opt/ente /app
       - mv usr/share/applications usr/share/icons /app/share
+      - rm -rf /app/share/icons/hicolor/1024x1024
       - desktop-file-edit --set-key Exec --set-value "run.sh %U" /app/share/applications/ente.desktop
       - mkdir /app/share/appdata
       - mv /app/ente/resources/$FLATPAK_ID.appdata.xml /app/share/appdata
