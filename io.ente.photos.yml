@@ -80,4 +80,7 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - zypak-wrapper.sh /app/ente/ente "$@"
+          - set -o errexit
+          - TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
+          - export TMPDIR
+          - exec zypak-wrapper.sh /app/ente/ente "$@"
