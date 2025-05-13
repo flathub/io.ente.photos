@@ -11,6 +11,8 @@ rename-icon: ente
 finish-args:
   - --share=ipc
   - --socket=x11
+  - --socket=pulseaudio
+  - --socket=system-bus
   - --device=dri
   - --share=network
   - --talk-name=org.freedesktop.secrets
