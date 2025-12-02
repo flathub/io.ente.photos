@@ -59,8 +59,8 @@ modules:
     sources:
       - type: file
         only-arches: [x86_64]
-        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.15/ente-1.7.15-amd64.deb
-        sha256: 6c6867f3c2bb26609614aec2e49d619d35ff0f7a1b485fb594cbbd1926b32f6b
+        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.16/ente-1.7.16-amd64.deb
+        sha256: 1484d9399fd32aa3790d98bea28174456da819cbeca86dc236220a74076a876f
         dest-filename: ente.deb
         x-checker-data:
           type: json
@@ -70,8 +70,8 @@ modules:
             + $version + "/ente-" + $version + "-amd64.deb"'
       - type: file
         only-arches: [aarch64]
-        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.15/ente-1.7.15-arm64.deb
-        sha256: 228399fe1d7b612624a624e9e5023ee1398d3fff01697e3e3e76eeff1cc442f7
+        url: https://github.com/ente-io/photos-desktop/releases/download/v1.7.16/ente-1.7.16-arm64.deb
+        sha256: a1b65f58780d596edcd476d29e8527649a13b37c5e13f813fdf09e16d267d45b
         dest-filename: ente.deb
         x-checker-data:
           type: json
